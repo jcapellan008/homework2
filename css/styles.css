@@ -1,0 +1,155 @@
+/* Variables CSS para colores y tipografías */
+:root {
+    --primary-color: #00274C;
+    --secondary-color: #FFCB05;
+    --font-color: #333;
+    --font-family: Arial, sans-serif;
+    --heading-font-family: 'Arial Black', sans-serif;
+    --base-font-size: 1rem;
+    --line-height: 1.6;
+    --header-img-width: 75px;
+    --gallery-gap: 16px; /* Espacio entre las imágenes */
+    --gallery-img-scale: 1.1;
+}
+
+/* Estilos Globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--base-font-size);
+    line-height: var(--line-height);
+    color: var(--font-color);
+    background-color: white;
+}
+
+/* Encabezado */
+header {
+    background-color: var(--primary-color);
+    padding: 1rem;
+    text-align: center;
+}
+
+header img {
+    width: var(--header-img-width);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Navegación */
+nav {
+    background-color: var(--primary-color);
+    display: inline-block;
+    padding: 0.5rem 0;
+    width: 80%;
+    margin: 0 auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* Contenido Principal */
+main {
+    padding: 2rem;
+}
+
+/* Encabezados */
+h1 {
+    text-align: center;
+    font-family: var(--heading-font-family);
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+/* Pie de Página */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+footer a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Clase gallery para contener y aplicar estilos generales de galería */
+.gallery {
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de galería con grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gallery-gap);
+}
+
+/* Estilo de galería con flexbox */
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gallery-gap);
+    justify-content: space-between;
+}
+
+/* Estilo común para imágenes en la galería */
+.gallery img {
+    width: 80%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery img:hover {
+    transform: scale(var(--gallery-img-scale));
+    z-index: 1;
+}
+
+/* Estilo para el contenedor de galería en múltiples líneas con ajuste automático */
+.gallery.flex {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las imágenes pasen a una nueva línea si es necesario */
+    gap: var(--gallery-gap); /* Espaciado entre las imágenes */
+    padding: 1rem 0; /* Espaciado alrededor de la galería */
+    justify-content: space-evenly; /* Acomoda las imágenes equitativamente en el espacio */
+}
+
+/* Estilo para las imágenes en la galería */
+.gallery.flex img {
+    flex: 1 1 150px; /* Establece un tamaño base de 150px, pero permite ajuste automático */
+    max-width: 200px; /* Define un ancho máximo opcional para evitar que se hagan demasiado grandes */
+    height: auto; /* Mantiene la proporción natural de las imágenes */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery.flex img:hover {
+    transform: scale(var(--gallery-img-scale));
+    z-index: 1;
+}
